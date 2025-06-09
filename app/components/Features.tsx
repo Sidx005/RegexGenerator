@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import React from 'react'
 import { motion, Variants } from 'framer-motion'
 
-type Props = {}
+type Props = object
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },

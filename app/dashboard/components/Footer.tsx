@@ -2,8 +2,8 @@
 import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
 import React from 'react'
-// motion
-type Props = {}
+// motio
+type Props = object
 const footerVariants={
     hidden:{opacity:0,y:50},
     visible:{

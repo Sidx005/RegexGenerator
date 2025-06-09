@@ -3,7 +3,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Flag } from 'lucide-react';
 import React from 'react'
 
-type Props = {}
+type Props = object
 const FLAGs=['g','i','m','s','u']
 /*
 g: Global === Finds all matches, not just the first one

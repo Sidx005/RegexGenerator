@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import RegexInp from './components/RegexInp'
 import {toast} from 'sonner'
 import Image from 'next/image'
-type Props = {}
+type Props = object
 type Lesson={
   title:string
   instruction:string

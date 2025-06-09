@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 // import { AccordionItem } from '@radix-ui/react-accordion'
 import React from 'react'
 // motion
-type Props = {}
+type Props = object
 const FAQvariants={
     hidden:{opacity:0,y:50},
     visible:{
