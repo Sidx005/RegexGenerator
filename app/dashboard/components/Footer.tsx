@@ -1,0 +1,32 @@
+'use client'
+import { motion } from 'framer-motion'
+import { Heart } from 'lucide-react'
+import React from 'react'
+// motion
+type Props = {}
+const footerVariants={
+    hidden:{opacity:0,y:50},
+    visible:{
+        opacity:1,
+        y:0,
+        transition:{duration:0.8,ease:'easeInOut'}
+    }
+}
+const Footer = (props: Props) => {
+  return (
+  
+       <motion.footer  className=''>
+        <div className="bg-gradient-to-br rounded-t-4xl  p-20 from-black/60 via-black/80 to-black   text-white  text-center">
+            <p className="text-xl ">
+            &copy; {new Date().getFullYear()} Regex Made Simple. All rights reserved.
+            </p>
+            <p className="text-lg flex justify-center  items-center gap-2 mt-5">
+            Made with <Heart size={20} className='text-red-600'/> <p>by Siddharth
+            </p>
+            </p></div>
+       </motion.footer>
+
+  )
+}
+
+export default Footer
