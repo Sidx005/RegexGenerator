@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { MoveLeft, MoveRight } from 'lucide-react'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 import RegexInp from './components/RegexInp'
 import {toast} from 'sonner'
@@ -73,7 +73,7 @@ const Page = () => {
   const [userName,setUserName]=useState('')
   const [answer,setAnswer]=useState('')
   const certRef=useRef<HTMLDivElement>(null)
-const checkRegex=()=>{
+const checkRegex=useCallback(()=>{
   try{
     const userRegex=new RegExp(answer,currentContent.defaultFlags)
     console.log(userRegex)
@@ -86,7 +86,7 @@ const checkRegex=()=>{
    return false
   }
   return false
-}
+},[answer, currentContent])
 
  useEffect(()=>{
   if(!answer.trim()) return;
@@ -168,7 +168,7 @@ const checkRegex=()=>{
     <div className={`flex w-full mt-10  ${currentPage===0?'justify-end':'justify-between'}`}>
 
      {currentPage!=0 && <Button disabled={currentPage===0} onClick={()=>setCurrentPage(prev=>prev-1)} className='text-xl p-5 items-center flex gap-3'> <MoveLeft/> Prev</Button>}
-   {currentPage!==content.length-1 &&  <Button disabled={currentPage>0 && !checkRegex()} onClick={()=>{setCurrentPage((currentPage+1)%content.length),setAnswer('')}} className='text-xl p-5 items-center flex gap-3'>Next <MoveRight/></Button>}
+   {currentPage!==content.length-1 &&  <Button disabled={currentPage>0 && !checkRegex()} onClick={()=>{setCurrentPage((currentPage+1)%content.length);setAnswer('');}} className='text-xl p-5 items-center flex gap-3'>Next <MoveRight/></Button>}
     </div>
     </div>
     </div>
