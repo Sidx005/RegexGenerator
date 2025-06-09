@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { BrainCircuit, Sparkles } from 'lucide-react';
+import {  Sparkles } from 'lucide-react';
 import React, { useState } from 'react';
 import { toast } from 'sonner';
 

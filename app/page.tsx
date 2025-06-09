@@ -1,7 +1,6 @@
-import { ArrowBigRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Nav from "./components/Nav";
 import Link from "next/link";
-import { Card, CardDescription, CardHeader } from "@/components/ui/card";
 import Animation from "./components/Animation";
 import FAQ from "./components/FAQ";
 import Features from "./components/Features";
