@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 // import { AccordionItem } from '@radix-ui/react-accordion'
 import React from 'react'
 // motion
-type Props = object
 const FAQvariants={
     hidden:{opacity:0,y:50},
     visible:{
@@ -14,7 +13,7 @@ const FAQvariants={
     }
 }
 const AccordionItemMotion=motion(AccordionItem)
-const FAQ = (props: Props) => {
+const FAQ = () => {
   return (
     <motion.div variants={FAQvariants} initial="hidden" whileInView={'visible'} viewport={{once:true,amount:0.3}} className="flex flex-col p-5  gap-20 md:w-1/2 text-center">
       <h1 className="text-3xl md:text-3xl font-bold">Frequently Asked Questions</h1>

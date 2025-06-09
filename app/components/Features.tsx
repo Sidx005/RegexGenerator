@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import React from 'react'
 import { motion, Variants } from 'framer-motion'
 
-type Props = object
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -26,7 +25,7 @@ const cardVariants: Variants = {
   },
 }
 
-const Features = (props: Props) => {
+const Features = () => {
   const MotionCard = motion(Card)
 
   return (

@@ -1,7 +1,6 @@
 // import { NextResponse } from 'next/server';
 // import { GoogleGenerativeAI } from '@google/generative-ai'; // Correct import
 
-import { error } from "console";
 import { NextResponse } from "next/server";
 
 // t3 code
@@ -92,6 +91,7 @@ export const POST=async(req:Request)=>{
             return NextResponse.json({pattern:jsonResponse.pattern})
         }
     } catch (error) {
+        console.error('Failed to parse Gemini response as JSON:', text, error)
         const jsonMatch=text.match(/"pattern":\s*"(.*?)"/)
         if(jsonMatch && jsonMatch[1]){
             jsonResponse={pattern:jsonMatch[1]}

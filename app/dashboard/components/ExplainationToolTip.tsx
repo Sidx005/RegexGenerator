@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Book, BookIcon, BookImageIcon, EditIcon } from "lucide-react";
+import { EditIcon } from "lucide-react";
 
-const ExplainationTooltip=({pattern}:any)=>{
+const ExplainationTooltip=({pattern}:{pattern:string})=>{
 const explain = (pattern: string) => {
   if (!pattern) return "No pattern yet";
 

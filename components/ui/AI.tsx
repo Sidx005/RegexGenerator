@@ -44,9 +44,13 @@ const AI: React.FC<AIProps> = ({ input, onAiGenerate, disabled = false }) => {
       } else {
         toast.error('AI did not return a valid pattern.');
       }
-    } catch (error: any) {
+    } catch (error:unknown) {
       console.error('Error in AI regex generation:', error);
-      toast.error(error.message || 'Error generating AI regex. Please try again.');
+          const errorMessage = error instanceof Error 
+        ? error.message 
+        : 'Error generating AI regex. Please try again.';
+      
+      toast.error(errorMessage);
     } finally {
       setLoading(false);
     }

@@ -5,10 +5,9 @@ import {Card,CardContent,CardHeader} from '@/components/ui/card'
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { Info } from "lucide-react"
 import dynamic from "next/dynamic"
-import * as monaco from 'monaco-editor'
 import { useState } from "react"
 const MonacoEditor=dynamic(()=>import('@monaco-editor/react'),{ssr:false})
-const RegexInput=({pattern,setPattern,flags}:any)=>{
+const RegexInput=({setPattern,flags}:{setPattern:(pattern: string)=>void,flags:string})=>{
     const[rawPattern,setRawPattern]=useState('')
     return(
         <Card className="w-full p-5">

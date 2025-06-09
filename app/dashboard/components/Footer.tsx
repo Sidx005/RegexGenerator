@@ -3,18 +3,9 @@ import { motion } from 'framer-motion'
 import { Heart } from 'lucide-react'
 import React from 'react'
 // motio
-type Props = object
-const footerVariants={
-    hidden:{opacity:0,y:50},
-    visible:{
-        opacity:1,
-        y:0,
-        transition:{duration:0.8,ease:'easeInOut'}
-    }
-}
-const Footer = (props: Props) => {
+
+const Footer = () => {
   return (
-  
        <motion.footer  className=''>
         <div className="bg-gradient-to-br rounded-t-4xl  p-20 from-black/60 via-black/80 to-black   text-white  text-center">
             <p className="text-xl ">

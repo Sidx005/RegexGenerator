@@ -5,7 +5,6 @@ import Animation from "./components/Animation";
 import FAQ from "./components/FAQ";
 import Features from "./components/Features";
 import Footer from "./dashboard/components/Footer";
-import motion from 'motion/react'
 
 export default function Home() {
   return (
@@ -16,7 +15,7 @@ export default function Home() {
         <h1 className="text-5xl  md:text-7xl font-sans p-5 font-extrabold text-center bg-gradient-to-b from-black/50 to-black bg-clip-text text-transparent">
           Regex Made Simple and Fast.
         </h1>
-        <p className="text-2xl opacity-60 text-center"> "An interactive tool to build, test, and debug regular expressions <br /> with instant feedback."</p>
+        <p className="text-2xl opacity-60 text-center"> An interactive tool to build, test, and debug regular expressions <br /> with instant feedback.</p>
   <Link
   href="/dashboard"
   className="flex link items-center gap-2 text-lg md:text-xl font-medium px-6 py-3 rounded-md shadow-md 

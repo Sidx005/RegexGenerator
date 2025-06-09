@@ -7,7 +7,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import RegexInp from './components/RegexInp'
 import {toast} from 'sonner'
 import Image from 'next/image'
-type Props = object
 type Lesson={
   title:string
   instruction:string
@@ -68,8 +67,8 @@ const content:Lesson[]=[
 ]
 
 
-const page = (props: Props) => {
-  const[currentPage,setCurrentPage]=React.useState(5)
+const Page = () => {
+  const[currentPage,setCurrentPage]=React.useState(0)
   const currentContent=content[currentPage]
   const [userName,setUserName]=useState('')
   const [answer,setAnswer]=useState('')
@@ -81,10 +80,12 @@ const checkRegex=()=>{
     if( userRegex.test(currentContent.text||'') && answer===currentContent.correctRegex){
       return true
     }
-  }catch(err){
+  }catch(error){
     // toast.error('Invalid Regex Pattern')
+    console.error('Invalid Regex Pattern:', error)
    return false
   }
+  return false
 }
 
  useEffect(()=>{
@@ -98,7 +99,7 @@ const checkRegex=()=>{
     toast.error('Incorrect Regex Pattern, Try Again!')
   }},1000)
   return ()=>clearTimeout(timeout)
- },[answer])
+ },[answer,checkRegex])
   return (
     <div className='text-3xl flex flex-col gap-10 justify-between items-start font-bold'>
       <div className="w-full flex items-center flex-col justify-center">
@@ -174,4 +175,4 @@ const checkRegex=()=>{
   )
 }
 
-export default page
+export default Page

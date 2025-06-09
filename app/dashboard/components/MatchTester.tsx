@@ -3,7 +3,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { FormInputIcon } from "lucide-react"
 import { useEffect, useState } from "react"
 
-const MatchTester=({pattern,flags}:any)=>{
+const MatchTester=({pattern,flags}:{pattern:string,flags:string})=>{
     const[inp,setInp]=useState('')
     const[matches,setMatches]=useState<string[]>([])
 
@@ -13,6 +13,7 @@ const MatchTester=({pattern,flags}:any)=>{
            const allMatches=[...inp.matchAll(regex)].map(m=>m[0]);
            setMatches(allMatches);
         } catch (error) {
+            console.error("Invalid regex pattern:", error);
           setMatches([])  
         }
     },[inp,pattern,flags])
