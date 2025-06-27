@@ -18,7 +18,7 @@ const handler = NextAuth({
 
         // otp:{}
       },
-      async authorize(credentials, req) {
+      async authorize(credentials) {
        const {email,password}=credentials as{email:string,password:string}
         if(!email || !password){
           return null;
