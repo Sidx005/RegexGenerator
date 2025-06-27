@@ -22,9 +22,9 @@ const Nav = () => {
         <div className="p-5 flex flex-col gap-5 text-4xl ">
         
                 <p style={{fontSize:'100px'}} className='text-4xl cursor-pointer' onClick={toggleMenu}><X size={50} className=''/></p>
-                        <Link href='/' className='mt-10'>Home</Link>
-                        <Link href='/dashboard' className=''>Test Regex</Link>
-                        <Link href='/' className=''>About</Link>
+                        <Link onClick={()=>setOpen(false)} href='/' className='mt-10'>Home</Link>
+                        <Link onClick={()=>setOpen(false)} href='/dashboard' className=''>Test Regex</Link>
+                        <Link onClick={()=>setOpen(false)} href='/' className=''>About</Link>
 
         </div>
       </div>
