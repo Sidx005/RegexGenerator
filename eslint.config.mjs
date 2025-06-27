@@ -24,7 +24,9 @@ export default defineConfig([
   {
     rules: {
       // Next.js and React 17+ automatically import React, disable this rule
-      'react/react-in-jsx-scope': 'off'
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off'
+
     }
   }
 ]);
