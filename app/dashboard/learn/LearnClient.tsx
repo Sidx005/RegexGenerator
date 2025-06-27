@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { MoveLeft, MoveRight } from 'lucide-react'
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import RegexInp from './components/RegexInp'
 import {toast} from 'sonner'
@@ -77,7 +77,7 @@ const LearnClient = () => {
 
 
  
-  const[currentPage,setCurrentPage]=React.useState(0)
+  const[currentPage,setCurrentPage]=useState(0)
   const currentContent=content[currentPage]
   const [userName,setUserName]=useState('')
   const [answer,setAnswer]=useState('')

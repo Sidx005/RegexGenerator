@@ -1,8 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { signOut, useSession } from 'next-auth/react'
 import Image from 'next/image'
-import React, { useState } from 'react'
-
+import  { useState } from 'react'
 const Avatar = () => {
   const { data: session } = useSession({ required: true })
   const [open, setOpen] = useState(false)

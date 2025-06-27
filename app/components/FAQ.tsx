@@ -2,7 +2,6 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { motion } from 'framer-motion'
 // import { AccordionItem } from '@radix-ui/react-accordion'
-import React from 'react'
 // motion
 const FAQvariants={
     hidden:{opacity:0,y:50},

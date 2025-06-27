@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Flag } from 'lucide-react';
-import React from 'react'
 
 const FLAGs = ['g', 'i', 'm', 's', 'u'];
 

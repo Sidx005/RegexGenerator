@@ -1,7 +1,6 @@
 'use client'
 import { ArrowLeft, X } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
 
 
 const DashNav = ({open,setOpen}:{open:boolean,setOpen:(open:boolean)=>void}) => {

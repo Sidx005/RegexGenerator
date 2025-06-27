@@ -1,6 +1,5 @@
 'use client'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import React from 'react'
 import { motion, Variants } from 'framer-motion'
 
 

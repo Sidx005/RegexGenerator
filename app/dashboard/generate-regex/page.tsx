@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { CheckCheck, Copy } from 'lucide-react';
-import React, { useMemo, useState, useCallback } from 'react'; // Added useCallback
+import { useMemo, useState, useCallback } from 'react'; // Added useCallback
 import { toast } from 'sonner';
 
 // Added 'ai' to the Mode type
