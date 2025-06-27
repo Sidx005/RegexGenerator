@@ -8,7 +8,7 @@ import RegexInp from './components/RegexInp'
 import {toast} from 'sonner'
 import Image from 'next/image'
 import {useSession,signIn} from 'next-auth/react'
-import {redirect} from 'next/navigation'
+// import {redirect} from 'next/navigation'
 import AuthComponent from './AuthComponent'
 import Avatar from './Avatar'
 type Lesson={
@@ -75,13 +75,9 @@ const content:Lesson[]=[
 const LearnClient = () => {
   const {data:session,status}=useSession()
 
-  if(status==='loading') return <p>Loading ...</p>
 
-  // if(!session){
-  //   signIn()
-  //   return <p>Please lgin</p>
-  // }
-  const[currentPage,setCurrentPage]=React.useState(content.length-1)
+ 
+  const[currentPage,setCurrentPage]=React.useState(0)
   const currentContent=content[currentPage]
   const [userName,setUserName]=useState('')
   const [answer,setAnswer]=useState('')
@@ -126,8 +122,9 @@ useEffect(()=>{
   return ()=>clearTimeout(timeout)
  },[answer,checkRegex])
 
+  if(status==='loading') return <p>Loading ...</p>
 
- 
+
   return (
     <div className='text-3xl flex flex-col gap-10 justify-between items-start font-bold'>
       <div className="w-full p-5 flex items-center  justify-center">
@@ -167,12 +164,13 @@ useEffect(()=>{
 
 
     <Button
+    disabled={!session?.user}
       onClick={async()=>{
         if(!session?.user) return toast.error('Please enter your name to download the certificate')
         if(!certRef.current) return toast.error('Certificate not ready yet')
           const html2canvas=(await import('html2canvas')).default
         const canvas=await html2canvas(certRef.current,{scale:2})
-        const defaultURL=canvas.toDataURL('/image/png')
+        const defaultURL=canvas.toDataURL('image/png')
         const link=document.createElement('a')
         link.href=defaultURL
           link.download = `${session?.user?.name || 'Certificate'}_NextJS.png`
@@ -199,7 +197,7 @@ useEffect(()=>{
    {currentPage!==content.length-1 &&  <Button disabled={currentPage>0 && !checkRegex()} onClick={()=>{setCurrentPage((currentPage+1)%content.length);setAnswer('');}} className='text-xl p-5 items-center flex gap-3'>Next <MoveRight/></Button>}
     </div>
     </div>
-{session?"":    <AuthComponent />
+{showModal &&  <AuthComponent />
 }    </div>
   )
 }
