@@ -1,3 +1,4 @@
+import React from "react";
 import { ArrowRight } from "lucide-react";
 import Nav from "./components/Nav";
 import Link from "next/link";

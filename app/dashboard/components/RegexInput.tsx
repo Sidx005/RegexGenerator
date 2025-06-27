@@ -1,11 +1,12 @@
 'use client'
 
 // import { Card, CardContent, CardHeader } from "../../components/"
+import React, { useState } from "react"
+
 import {Card,CardContent,CardHeader} from '@/components/ui/card'
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { Info } from "lucide-react"
 import dynamic from "next/dynamic"
-import { useState } from "react"
 const MonacoEditor=dynamic(()=>import('@monaco-editor/react'),{ssr:false})
 interface RegexInputProps {
   pattern: string;

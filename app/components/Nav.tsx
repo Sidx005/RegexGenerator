@@ -1,7 +1,8 @@
 'use client'
+import React, { useState } from 'react'
+
 import { MenuIcon, X } from 'lucide-react'
 import Link from 'next/link'
-import { useState } from 'react'
 
 const Nav = () => {
   const [open, setOpen] = useState(false)

@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import AI from '@/components/ui/AI'; // Ensure this import path is correct
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';

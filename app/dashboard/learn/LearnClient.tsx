@@ -1,13 +1,13 @@
 'use client'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import { MoveLeft, MoveRight } from 'lucide-react'
-import { useCallback, useEffect, useRef, useState } from 'react'
 
 import RegexInp from './components/RegexInp'
 import {toast} from 'sonner'
 import Image from 'next/image'
-import {useSession,signIn} from 'next-auth/react'
+import {useSession} from 'next-auth/react'
 // import {redirect} from 'next/navigation'
 import AuthComponent from './AuthComponent'
 import Avatar from './Avatar'
@@ -79,7 +79,6 @@ const LearnClient = () => {
  
   const[currentPage,setCurrentPage]=useState(0)
   const currentContent=content[currentPage]
-  const [userName,setUserName]=useState('')
   const [answer,setAnswer]=useState('')
   const certRef=useRef<HTMLDivElement>(null)
 const [showModal, setShowModal] = useState(false)

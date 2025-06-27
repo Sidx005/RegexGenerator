@@ -1,4 +1,5 @@
 'use client'
+import React from 'react'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { motion } from 'framer-motion'
 // import { AccordionItem } from '@radix-ui/react-accordion'

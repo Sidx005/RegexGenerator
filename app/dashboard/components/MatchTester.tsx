@@ -1,3 +1,4 @@
+import React from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
 import { FormInputIcon } from "lucide-react"

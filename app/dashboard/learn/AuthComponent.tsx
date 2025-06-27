@@ -1,11 +1,10 @@
 'use client'
+import React, { useState } from 'react'
 
 import { signIn } from 'next-auth/react'
 import { Button } from "@/components/ui/button"
-import { GithubIcon, LucideGithub } from 'lucide-react'
-import {Github} from 'lucide-react'
+import { LucideGithub } from 'lucide-react'
 import { Input } from '@/components/ui/input'
-import { useState } from 'react'
 import { toast } from 'sonner'
 const AuthComponent = () => {
   const [showSignUp,setShowsignUp]=useState(false)
